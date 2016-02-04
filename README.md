@@ -19,6 +19,10 @@ Piracy is not condoned!
 If the output file is garbled, double-check the provided access key.
 DeVo makes no attempt to detect bogus access keys.
 
+## Downloads
+
+Binary packages are availble for download [here](https://github.com/ziuchkovski/devo/releases).
+
 ## Library
 
 DeVo is implemented in pure [Go](https://golang.org/) and can be used as a library.
