@@ -1,0 +1,14 @@
+{
+	"Tasks": [
+		"default",
+		"publish-github"
+	],
+	"PackageVersion": "0.7.0",
+	"TaskSettings": {
+		"publish-github": {
+			"owner": "ziuchkovski",
+			"repository": "devo"
+		}
+	},
+	"ConfigVersion": "0.9"
+}
