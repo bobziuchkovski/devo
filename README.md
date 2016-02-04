@@ -21,7 +21,7 @@ DeVo makes no attempt to detect bogus access keys.
 
 ## Library
 
-DeVo is implemented in pure (Go)[https://golang.org/] and can be used as a library.
+DeVo is implemented in pure [Go](https://golang.org/) and can be used as a library.
 Please see the [godocs](https://godoc.org/github.com/ziuchkovski/devo) for details.
 
 ## Authors
