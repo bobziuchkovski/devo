@@ -52,61 +52,61 @@ type config struct {
 	VersionFlag   bool           `flag:"version" description:"Display version information and exit"`
 }
 
-func (c config) validate() error {
-	if c.Input == nil {
+func (cfg config) validate() error {
+	if cfg.Input == nil {
 		return fmt.Errorf("-i/--input must be specified")
 	}
-	if c.Output == nil {
+	if cfg.Output == nil {
 		return fmt.Errorf("-o/--output must be specified")
 	}
-	if c.AccessKey == "" {
+	if cfg.AccessKey == "" {
 		return fmt.Errorf("-m/--mak is required")
 	}
-	if !regexp.MustCompile("^\\d{10}$").MatchString(c.AccessKey) {
+	if !regexp.MustCompile("^\\d{10}$").MatchString(cfg.AccessKey) {
 		return fmt.Errorf("-m/--mak must be a 10 digit value")
 	}
 	return nil
 }
 
 func main() {
-	config := &config{}
-	cmd := writ.New("devo", config)
+	cfg := &config{}
+	cmd := writ.New("devo", cfg)
 	cmd.Help.Usage = usage
 	cmd.Help.Header = header
 	cmd.Help.Footer = footer
 	_, positional, err := cmd.Decode(os.Args[1:])
 
-	if err != nil || config.HelpFlag {
+	if err != nil || cfg.HelpFlag {
 		cmd.ExitHelp(err)
 	}
-	if config.VersionFlag {
+	if cfg.VersionFlag {
 		fmt.Fprintf(os.Stdout, "DeVo version %d.%d.%d\nCompiled with %s\n", devo.Version.Major, devo.Version.Minor, devo.Version.Patch, runtime.Version())
 		os.Exit(0)
 	}
 	if len(positional) != 0 {
 		cmd.ExitHelp(fmt.Errorf("too many arguments provided"))
 	}
-	err = config.validate()
+	err = cfg.validate()
 	if err != nil {
 		cmd.ExitHelp(err)
 	}
 
-	if config.TraceOutput != nil {
-		defer config.TraceOutput.Close()
-		err = trace.Start(config.TraceOutput)
+	if cfg.TraceOutput != nil {
+		defer cfg.TraceOutput.Close()
+		err = trace.Start(cfg.TraceOutput)
 		check(err)
 		defer trace.Stop()
 	}
 
-	if config.ProfileOutput != nil {
-		defer config.ProfileOutput.Close()
-		err = pprof.StartCPUProfile(config.ProfileOutput)
+	if cfg.ProfileOutput != nil {
+		defer cfg.ProfileOutput.Close()
+		err = pprof.StartCPUProfile(cfg.ProfileOutput)
 		check(err)
 		defer pprof.StopCPUProfile()
 	}
 
-	defer config.Output.Close()
-	check(devo.Decrypt(config.Output, config.Input, config.AccessKey))
+	defer cfg.Output.Close()
+	check(devo.Decrypt(cfg.Output, cfg.Input, cfg.AccessKey))
 }
 
 func check(err error) {
