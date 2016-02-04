@@ -6,7 +6,7 @@
 	"PackageVersion": "0.7.0",
 	"TaskSettings": {
 		"publish-github": {
-			"owner": "ziuchkovski",
+			"owner": "bobziuchkovski",
 			"repository": "devo"
 		}
 	},

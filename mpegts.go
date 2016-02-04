@@ -23,7 +23,7 @@ package devo
 import (
 	"bufio"
 	"fmt"
-	"github.com/ziuchkovski/turing"
+	"github.com/bobziuchkovski/turing"
 	"io"
 )
 

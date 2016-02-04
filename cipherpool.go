@@ -22,7 +22,7 @@ package devo
 
 import (
 	"crypto/sha1"
-	"github.com/ziuchkovski/turing"
+	"github.com/bobziuchkovski/turing"
 )
 
 type cipherHandle struct {

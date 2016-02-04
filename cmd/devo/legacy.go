@@ -24,8 +24,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/ziuchkovski/devo"
-	"github.com/ziuchkovski/writ"
+	"github.com/bobziuchkovski/devo"
+	"github.com/bobziuchkovski/writ"
 	"io"
 	"os"
 	"regexp"
@@ -37,7 +37,7 @@ const (
 	header = `
 DeVo decrypts TiVo recordings.  It is intended for personal/educational use only.
 Decrypted files must NOT be distributed.  Piracy is NOT condoned!`
-	footer = "DeVo home page: https://github.com/ziuchkovski/devo"
+	footer = "DeVo home page: https://github.com/bobziuchkovski/devo"
 )
 
 type config struct {

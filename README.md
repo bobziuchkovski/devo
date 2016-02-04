@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/ziuchkovski/devo.svg?branch=master)](https://travis-ci.org/ziuchkovski/devo)
-[![Coverage](http://gocover.io/_badge/github.com/ziuchkovski/devo?0)](http://gocover.io/github.com/ziuchkovski/devo)
-[![Report Card](http://goreportcard.com/badge/ziuchkovski/devo)](http://goreportcard.com/report/ziuchkovski/devo)
-[![GoDoc](https://godoc.org/github.com/ziuchkovski/devo?status.svg)](https://godoc.org/github.com/ziuchkovski/devo)
+[![Build Status](https://travis-ci.org/bobziuchkovski/devo.svg?branch=master)](https://travis-ci.org/bobziuchkovski/devo)
+[![Coverage](https://gocover.io/_badge/github.com/bobziuchkovski/devo?0)](https://gocover.io/github.com/bobziuchkovski/devo)
+[![Report Card](http://goreportcard.com/badge/bobziuchkovski/devo)](http://goreportcard.com/report/bobziuchkovski/devo)
+[![GoDoc](https://godoc.org/github.com/bobziuchkovski/devo?status.svg)](https://godoc.org/github.com/bobziuchkovski/devo)
 
 # DeVo
 
@@ -21,16 +21,16 @@ DeVo makes no attempt to detect bogus access keys.
 
 ## Downloads
 
-Binary packages are availble for download [here](https://github.com/ziuchkovski/devo/releases).
+Binary packages are availble for download [here](https://github.com/bobziuchkovski/devo/releases).
 
 ## Library
 
 DeVo is implemented in pure [Go](https://golang.org/) and can be used as a library.
-Please see the [godocs](https://godoc.org/github.com/ziuchkovski/devo) for details.
+Please see the [godocs](https://godoc.org/github.com/bobziuchkovski/devo) for details.
 
 ## Authors
 
-Bob Ziuchkovski (@ziuchkovski)
+Bob Ziuchkovski (@bobziuchkovski)
 
 ## License (MIT)
 
