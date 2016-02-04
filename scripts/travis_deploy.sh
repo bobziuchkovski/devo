@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # This script cross-compiles binaries for all supported Go platforms and deploys
-# the resulting binaries to the DeVo releases page.  The heavy-liftin is done by
+# the resulting binaries to the DeVo releases page.  The heavy lifting is done by
 # goxc.
 
 die() {
@@ -18,7 +18,7 @@ fi
 [ -n "$GITHUB_TOKEN" ] || die "GITHUB_TOKEN must be set"
 [ -n "$TARGET_GO_VERSION" ] || die "TARGET_GO_VERSION must be set"
 if [ "$TRAVIS_GO_VERSION" != "$TARGET_GO_VERSION" ]; then
-  echo "Skipping.  Travis Go $TRAVIS_GO_VERSION doesn't match target Go $TARGET_GO_VERSION"
+  echo "Skipping.  Travis Go $TRAVIS_GO_VERSION doesn't match target Go $TARGET_GO_VERSION."
   exit 0
 fi
 
