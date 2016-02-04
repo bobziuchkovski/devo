@@ -1,18 +1,24 @@
 language: go
 sudo: false
 
+env:
+  secure: "FiS5MzJ/6ZtisgQMusdmFPfc2fOFKZAoqVrUMYLMIJTG3RjgQ/P0+OA5HI4J15l8NsSI95CFWHW6r0gktjb4hEMpIzPGFl4LkfrOHVJGKygkXjlx3fXHDzJn0gcx+QDWlsL0ug9Qpk1HYFvIlpcKwKM+Iv5pX8Z7sekE2peZ1Bbil1E/W0wPLxZsJGDsi5LbcoxhwSHUDfmXsDgt4PHH4jhACxBpyFFyLu3koZ/t76MhgJeZo3G2zNlhWa9jpDhiJYfdTMpzaarR0IVaVcwDWSA1r2MwqLrvLGfs10WfMjzmgqmfouEEw6BERNrkqMewoyUnLlhkyVNScCDNyU7EuJ4ej5sEtqjO8FiTh5+1TOYc3/ZSiXqYPt0ruQMtA81mDYt1ibaV6h5bAddfZCcwROaZbykyNAYuAkPiAD7NDj3fYyEXqm/T/eLFAgRcjp6cc2jZgPLTcx+wyxjYfU9e+/b9ZZo5+dIH2IqpcC3B6oauZlwFvKk4EXJ4sP7ha5QtyuiEJgA+FcNnzWrk7HfiNBAqoSPCCetKTSMXtIisG9iS5upJpj6e4s27ujNUqhYWIKJzyCxZbKgSNa15NKgsDiAsEBWInjg35MpIxOBv0uCyV2cNc/ekq1ArVfwtzohJEeouTwlSpxt0gQP3pD+WmOnFVgSn2LExGGvc9JNrP9Q="
+
 go:
-- 1.2.2
-- 1.3.3
-- 1.4.3
-- 1.5.3
-- tip
+  - 1.2.2
+  - 1.3.3
+  - 1.4.3
+  - 1.5.3
+  - tip
 
 matrix:
   allow_failures:
     - go: tip
 
 script:
-- go tool -n vet || go get golang.org/x/tools/cmd/vet
-- go vet
-- go test -v
+  - go tool -n vet || go get golang.org/x/tools/cmd/vet
+  - go vet
+  - go test -v
+
+after_success:
+  - TARGET_GO_VERSION=1.5.3 scripts/travis_deploy.sh

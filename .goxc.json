@@ -3,7 +3,6 @@
 		"default",
 		"publish-github"
 	],
-	"PackageVersion": "0.7.0",
 	"TaskSettings": {
 		"publish-github": {
 			"owner": "bobziuchkovski",
